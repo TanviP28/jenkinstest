@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                // This step compiles the Java code
+                sh 'javac HelloWorld.java'
+            }
+        }
+        stage('Test') {
+            steps {
+                // This step could include unit tests
+                echo 'No tests for Hello World'
+            }
+        }
+        stage('Run') {
+            steps {
+                // This step runs the Java application
+                sh 'java HelloWorld'
+            }
+        }
+    }
+}
